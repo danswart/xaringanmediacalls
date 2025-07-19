@@ -1,0 +1,267 @@
+/* Text */
+
+.f-4 {
+  font-size: 4rem;
+}
+
+.ul{ 
+  text-decoration: 
+  underline; 
+  
+}
+
+.dbl-underline{
+  border-bottom:
+  4px double;
+  
+}
+
+/* Colors */
+
+.bg-navajowhite {
+  background-color: #FFDEAD;
+}
+
+.bg-antiquewhite {
+  background-color: #FAEBD7;
+}
+
+.bg-bisque {
+  background-color: #FFE4C4;
+}
+
+.bg-moccasin {
+  background-color: #FFE4B5;
+}
+
+.bg-lightblue {
+  background-color: #ADD8E6;
+}
+
+.bg-lightskyblue {
+  background-color: #87CEFA;
+}
+
+.bg-lightsteelblue1 {
+  background-color: #CAE1FF;
+}
+
+
+.lc{
+  color: lightcoral; 
+  font-weight: bold;
+}
+
+.fireb{
+  color: firebrick;
+}
+
+.tq{
+  color: turquoise;
+}
+
+.aq{
+  color: aquamarine;
+}
+
+.char{
+  color: #7FFF00;
+}
+
+.o{
+  color: #FF5733;
+}
+
+.y{
+  color: yellow;
+}
+
+.cfb{
+  color: cornflowerblue;
+}
+
+.dsb{
+  color: deepskyblue;
+}
+
+.dodger{
+  color: dodgerblue;
+}
+
+.sb{
+  color: steelblue;
+}
+
+.rb{
+  color: royalblue;
+}
+
+/* Alignment */
+
+.top-3{
+  top: 3rem;
+}
+
+.top-4{
+  top: 4rem;
+}
+
+.top-5{
+  top: 5rem;
+}
+
+.top-6{
+  top: 6rem;
+}
+
+.top-7{
+  top: 7rem;
+}
+
+
+/* Styles for quadrant layout */
+
+.quad-container {
+  display: flex;
+  height: 80%;
+  flex-wrap: wrap; /* Wrap quadrants to next row if needed */
+}
+
+.quad {
+  flex: 1;
+  display: flex;
+  justify-content: top;
+  align-items: top;
+  border: 3px solid black; /* Border around the entire quadrant with white color */
+  box-sizing: border-box;
+  padding: 1em;
+  overflow: hidden; /* Clip content inside quadrant */
+  min-width: 50%; /* Minimum width for each quadrant */
+  max-height: 50%; /* Maximum height for each quadrant */
+}
+
+/* Custom styles for each quadrant */
+
+.top-left {
+  background-color: white;
+  color: black;
+}
+
+.top-right {
+  background-color: white;
+  color: black;
+}
+
+.bottom-left {
+  background-color: white;
+  color: black;
+}
+
+.bottom-right {
+  background-color: white;
+  color: black;
+}
+
+/* Adjust text overflow */
+
+.quad-content {
+  max-height: 100%; /* Ensure text doesn't exceed quadrant height */
+  overflow: auto; /* Add scrollbars if content exceeds quadrant */
+}
+
+
+.split-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.quad1, .quad2, .quad3, .quad4{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quad2, .quad3{
+  border-right: 2px solid black;
+}
+
+.quad1, .quad4{
+  border-left: 2px solid black;
+}
+
+/* vertical line in the middle */
+
+.split-slide .quad1:not(:first-child){
+  border-left: 3px solid black;
+}
+
+.split-slide .quad4:not(:first-child){
+  border-left: 3px solid black;
+}
+
+/* horizontal line in center */
+
+.split-slide .quad3:not(:first-child){
+  border-top: 3px solid black;
+}
+
+.split-slide .quad4:not(:first-child){
+  border-top: 3px solid black;
+}
+
+/* Resizing Images */
+
+.image-container-64-center {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  max-height: 400px; /* Adjust the maximum height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resize-image-65 {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  max-height: 500px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-63 {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  max-height: 300px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-64 {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  max-height: 400px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-55 {
+  max-width: 500px; /* Adjust the maximum width as needed */
+  max-height: 500px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-54 {
+  max-width: 500px; /* Adjust the maximum width as needed */
+  max-height: 400px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-53 {
+  max-width: 500px; /* Adjust the maximum width as needed */
+  max-height: 300px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-44 {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  max-height: 400px; /* Adjust the maximum height as needed */
+}
+
+.resize-image-43 {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  max-height: 300px; /* Adjust the maximum height as needed */
+}

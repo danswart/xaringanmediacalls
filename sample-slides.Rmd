@@ -1,0 +1,1144 @@
+---
+title: .f-5.b[SAMPLE .y[SLIDE] DECK]
+subtitle: .f2.i[An .y[U].o[C].tq[E] Workshop by .y.b[Dan Swart]]
+author: 
+institute: .b.lc["Be the Ball, Danny...Be the Ball"]
+date: "(updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, swart.css]
+    lib_dir: libs
+    self_contained: true
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: Base16/Bright
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+---
+class: top
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer) # Custom 'xaringan' CSS Themes # Custom 'xaringan' CSS Themes
+style_duo_accent(
+  colors = c(
+    red = "red",
+    purple = "#3e2f5b",
+    lightpurple = "#DCD0FF",
+    lavender = "#967bb6",
+    violet = "#8A2BE2",
+    periwinkle = "#ccccff",
+    orange = "#FF5733", # Orange - Innovation and Excitement
+    green = "#136f63", # Teal - Creativity and Growth
+    white = "#FFFFFF",
+    yellow = "yellow", # Yellow - Optimism and Energy:
+    gold = "gold",
+    turquoise = "#00C5CD", # Turquoise - Balance and Clarity:
+    aquamarine = "#7FFFD4",
+    teal = "#2c8475",
+    darkgreen = "#006400",
+    forestgreen = "forestgreen",
+    firebrick = "firebrick",
+    lightcoral = "lightcoral",
+    black = "black",
+    charcoal = "#36454F",
+    purple = "#7030A0", # Purple (#7030A0) - Imagination and Open-mindedness
+    blue = "#0070C0", #Blue - Persuasion and Trust:
+    cornflowerblue = "cornflowerblue",
+    deepskyblue = "deepskyblue",
+    dodgerblue = "dodgerblue",
+    steelblue = "steelblue",
+    royalblue = "royalblue"),
+  primary_color = "black",  
+  secondary_color = "#FFFFFF",
+  # secondary_color = "yellow",
+  black_color = "#000004",
+  white_color = "#FFFFFF",
+  base_font_size = "20px",
+  text_font_family = "Jost",
+  text_font_url = "https://indestructibletype.com/fonts/Jost.css",
+  header_font_google = google_font("Roboto Slab", "400", "700"),
+  header_font_weight = "400",
+  inverse_background_color = "black",
+  # inverse_header_color = "#eaeaea",
+  inverse_header_color = "#FFFFFF",
+  title_slide_text_color = "#FFFFFF",
+  text_slide_number_color = "#FFFFFF",
+  text_bold_color = "#FF5733",
+  code_inline_color = "#FFFFFF",
+  code_highlight_color = "transparent",
+  link_color = "lightcoral",
+  text_color = "#FFFFFF",
+  header_color = "#FFFFFF",
+  background_color = "black",
+  blockquote_left_border_color = "steelblue",
+  # table_row_even_background_color = lighten_color("white", 0.9),
+  extra_fonts = list(
+    "https://indestructibletype.com/fonts/Jost.css",
+    google_font("Amatic SC", "400"))
+  
+)
+
+```
+
+
+```{r LIBRARIES, echo=FALSE, include=FALSE, warning=FALSE}
+####
+library(ggplot2) 
+library(tibble) 
+library(tidyr) 
+library(readr) 
+library(purrr) 
+library(dplyr) 
+library(stringr) 
+library(forcats) 
+library(lubridate) 
+####
+library(xaringan) 
+library(xaringanExtra) 
+library(xaringanthemer) 
+library(countdown) 
+library(htmltools) 
+library(htmlwidgets) 
+library(here) 
+library(knitr) 
+library(kableExtra) 
+library(DT) 
+library(shrtcts) 
+```
+
+```{r xaringanExtra, echo = FALSE, warning = FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_animate_all("fade")
+xaringanExtra::use_banner()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_extra_styles()
+xaringanExtra::use_fit_screen()
+# xaringanExtra::use_freezeframe()
+xaringanExtra::use_panelset()
+xaringanExtra::use_progress_bar()
+xaringanExtra::use_scribble()
+xaringanExtra::use_search()
+xaringanExtra::use_share_again()
+# xaringanExtra::use_slide_tone()  # not yet a feature I like
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_tachyons()
+
+```
+
+```{r xarington Countdown WHEN YOU NEED ONE, echo=FALSE}
+# countdown::countdown(
+#           minutes = 0,
+#           seconds = 90,
+#           warn_when = 5
+#           style = "position: relative; width: min-content; margin: 1em auto;",
+#           top = 0, bottom = 0,
+#           left = 0, right = 0,
+#           margin = "5%",
+#           font_size = "8em",
+#           color_running_background = "#31b09e",
+#           color_warning_background = "#f79334",
+#           color_finished_background = "#b56b6f",
+#           color_finished_text = "#eaeaea"
+#           # Fanfare when it's over
+#           play_sound = TRUE
+#
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{css CSS-Code, echo=FALSE}
+
+```
+
+# Today's workshop is brought to you by the letter .f-5.y.b["U"] 
+
+.pull-left[
+<br>
+<br>
+<br>
+
+.f-5.b[.y["Unique!"]]
+]
+
+.pull-right[
+
+<img src="gif/sesame-brought-to-you-by-letter.gif" width="100%" height="120%">
+
+]
+
+---
+class: left middle
+
+.f-6[# WHY ARE WE HERE TODAY?]
+
+---
+class: middle
+
+.pull-left[
+
+.f-5.y[To]  
+<span style="font-size: 120px;">**LEARN**</span>
+
+]
+
+.pull-right[
+
+<img src="gif/baby_learning.gif" width="100%"/>
+
+]
+
+---
+class:   
+
+.pull-left[
+
+.f1.y[
+to have <span style="font-size: 140px;">**FUN**</span>]
+
+<img src="gif/boxer_bouncing_at_door.gif" width="90%"/>
+
+]
+
+.pull-right[
+
+<img src="gif/roller_coaster_fun.gif" width="90%"/>
+
+]
+
+---
+class:   
+
+.pull-right[
+<br>
+<br>
+
+.f1.y[And, to] 
+
+<span style="font-size: 65px;">**MAKE A DIFFERENCE!**</span>
+]
+
+.pull-left.absolute.left-2.top-2[
+
+<img src="gif/turtle_helping_turtle.gif" width="100%" height=500/>
+]
+
+---
+class: bg-purple middle center     
+
+<span style="font-size: 100px; font-weight: 400;">This workshop is designed specifically to help you .y.b[succeed]; so you can .tq.b[make a difference]
+
+</span>
+
+---
+.f1.right[About me:]
+.f1.y.b.i.left[Dan Swart]
+
+.left-column[<img style="border-radius: 60%;" src="img/swart-cpa.jpg" width="200px"/>]
+
+
+.right-column[
+
+.f2[I help owners use their companies to create .tq[prosperity] and .tq[fulfillment] for themselves and others.
+
+.f2[A 'recovering tax CPA' who loves entrepreneurs way more than tax issues. I now teach companies to be even more .y[Unique, ] .o[Capable,] and .tq[Effective]]
+
+]
+]
+
+---
+class: top
+
+# How to contact me:
+
+<br>
+<br>
+<br>
+
+.center.f1.tq[`r fontawesome::fa("phone")` (916) 802-1040]  
+
+<br>
+<br>
+
+.center.f1.tq[`r fontawesome::fa("envelope", a11y = "sem")` dan@danswart.com]
+
+
+---
+class: middle center
+
+.f-5[My Mission is to Create Happy Customers]
+
+<br>
+<br>
+.f1.y[How About You?]
+
+---
+class: middle left     
+
+<span style="font-size: 100px; font-weight: 400;">THE CHALLENGE WE ALL FACE...</span>
+
+---
+class: top center
+
+<br>
+
+.f1[How to be .b.y[Unique] in the marketplace]]
+
+--
+
+<br>
+<br>
+.f1[Because the more .y[Unique,] the .tq[more success.]]
+
+--
+
+<br>
+<br>
+.f1[Being .b.y[different] is more important than you think!]
+
+---
+class: middle center     
+
+<span style="font-size: 100px; font-weight: 400;">In the Marketplace .lc[Contrast] is .b.y[Power]</span>
+
+---
+
+<br>
+# The very best way to .lc[contrast] with your competitors
+
+--
+
+<br>
+<br>
+.f1.center[ is to be .lc[very] .b.tq[Effective] AND .lc[very] .b.o[Capable]]
+
+--
+
+<br>
+.f1.y.right[from you customer's point of view]
+
+---
+class: top  
+
+.pull-left[
+.f-5[.y[Unique] means]
+
+<br>
+<br>
+.f1.lc[Standing out in a crowd]
+]
+
+.pull-right[
+
+<br>
+<br>
+<img src="gif/stand-out-in-crowd.gif" width=800, height=500/>
+
+]
+
+---
+class: top  
+
+.pull-left[
+.f-5[.y[Unique] means]
+
+<br>
+<br>
+.f1[being .b.lc[unconventional]]
+]
+
+.pull-right[
+
+<br>
+<br>
+.center[<img src="gif/red-raincoat-in-crowd.gif" width=1000, height=450/>]
+
+]
+
+---
+class:
+
+.f1.left[Avoid .red[conventional logic] because all your competitors will use that]
+
+--
+
+<br>
+<br>
+<br>
+<br>
+.f1.right.y[Test counter-intuitive ideas because your competitors won't]
+
+---
+class: middle left     
+
+<span style="font-size: 100px; font-weight: 400;">Why This Works...</span>
+
+---
+class:
+
+.f1[The unstoppable .lc[chain reaction]:]
+
+--
+
+<br>
+<br>
+.left.f1[Become .tq[Effective], then]
+
+--
+
+<br>
+<br>
+<br>
+.right.f1[Build your .o[Capability] to deliver]
+
+--
+
+<br>
+<br>
+<br>
+.f1.center[And you will be irresistably .y[UNIQUE]]
+
+---
+class: middle center
+
+.f-5[So, what does it mean to be .tq["effective?"]]
+
+---
+class: top  
+
+.pull-left[
+.f-5.tq[Effective] 
+
+<br>
+.f2[means .y.b[knowing] what creates .lc[REAL] value for customers - .o[in their terms]]
+
+<br>
+.f2[and having the .y[capability] to deliver it .o[upon demand]
+]
+]
+.pull-right.bottom[
+
+<br>
+
+<img src="gif/5_of_5_stars.gif" width="100%" height="80%">]
+
+---
+class: top center  
+
+.f-5.b[.tq[Effective] means...]
+
+--
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+.f1.bottom.b[.f-5[Strictly] .o[from the customer's point of view]]
+
+---
+class:  
+
+
+.f1[Your efforts must be .tq[Useful,] or] 
+
+<br>
+<br>
+<br>
+
+.f1.center[.tq[Fulfill a desire], or]
+
+<br>
+<br>
+<br>
+
+.f1.right[.tq[Solve a problem]]
+
+<br>
+<br>
+
+.f1[From the .y[customer's point of view]]
+
+---
+class: middle center    
+
+
+.f-5.b.tq[Effective ] .f1[does .b.lc[NOT] mean <br>
+
+.f-5.red[Expedient]]
+
+---
+class:  
+
+.f1.b.red[Expedient =]
+
+
+.f1.right[.lc[Quick, ] .lc[Interim ] or .lc[Temporary]]
+
+<br>
+<br>
+.f1.center[.lc[Short-term], often at the expense of the long-term]
+
+
+.f1.left[.lc[Putting out fires,] .f1[often] .red[at the expense of the customer]
+]
+
+---
+class: top center  
+
+# Strangely, the opposite is .red[NOT] true:
+
+.f-5[.lc[Efficient] &ne; .tq[Effective]
+]
+
+--
+
+.f1.y[As you become more .tq[effective] you will .white[automatically] become more .lc[efficient]]
+
+---
+.f-5[.lc[Productive] &ne; .tq[Effective]
+]
+
+--
+
+.f1.y[As you become more .tq[effective] you will .white[automatically] become more .lc[productive]]
+
+---
+class:  top center
+
+<br>
+# But, don't just take my word for it...
+
+--
+
+# Let's hear what .y[Warren Buffet] thinks about .tq[effectiveness] in delighting customers
+
+<br>
+
+.f1[
+<a href="vid/buffet-on-customer-delight.mp4" target="_blank">Warren Buffet on Delighting Customers <br>30 sec</a>
+]
+
+---
+class: middle center     
+
+.royalblue[
+<span style="font-size: 100px; font-weight: 400;">Some Cold, Hard Facts...</span>
+]
+
+<img src="gif/its-cold.gif" width=1200 height=450>
+
+---
+class: center
+
+<br>
+
+# .tq[Half] of new businesses .red[fail] in .o[5 years].  
+
+--
+
+<br>
+
+# By .tq[year 10] fully .red[two-thirds] are .o[gone].  
+
+--
+
+<br>
+
+# Only .red[10%] make it to .o[20 years].  
+
+---
+class:  
+
+
+<br>
+
+.f1[Studies and surveys also show shocking .red[failure rates] for .tq[improvement initiatives] that can range from 
+
+
+.center.f1[.red[50% to 70%] or **even higher.**]]
+
+---
+class:
+
+# Companies that fail are .red[not]: 
+
+# * .y[Unique] enough, 
+
+# * .o[Capable] enough, or
+
+# * .tq[Effective] enough
+
+<br>
+# .right.lc[from the customer's point of view]
+
+---
+class: top center
+
+# If you're looking for a 'sure-fire', low-cost way to prosper in the marketplace...
+
+--
+
+<br>
+# Become .y[very Unique] 
+<br>
+# by becoming .tq[very Effective] <br> and .o[very Capable]
+
+---
+class: center
+
+# .y[It’s not remarkable that companies fail.]  
+
+--
+
+<br>
+
+.f-5[It’s remarkable that they .red[fail so often, .f-5.white[and have] for so long]] 
+
+---
+class: center
+
+# .tq[Obviously,] we make the same mistakes **over and over again**.  
+
+--
+
+<br>
+
+# .tq[Otherwise,] those grim survival statistics would have improved long ago,
+
+<br>
+
+.f1.y[RIGHT?]
+
+---
+class:
+
+.pull-left[
+
+<br>
+<br>
+<br>
+<br>
+<img src="gif/zombies.gif" width=800, height=500>
+]
+
+
+.pull-right[
+
+<br>
+<br>
+<br>
+
+.f1[ And what about the companies that are just surviving?]
+<br>
+<br>
+<br>
+
+.f1.o[They are neither fully alive nor completely dead]
+]
+
+---
+class: top center
+
+.f1[This is not a laziness problem, or an intelligence problem.]  
+
+--
+
+<br>
+<br>
+.f1[Most business owners are very hard-working, and good at what they do.]
+
+--
+
+<br>
+<br>
+.f1.tq[Wouldn’t you agree?]
+
+---
+class: middle center
+
+# But they’re not very good at turning all that hard work
+
+<br>
+<br>
+
+# into .tq[prosperity] and a .tq[better quality of life] 
+
+
+.f1.red[are they?]
+
+---
+class: middle center     
+
+<span style="font-size: 100px; font-weight: 400;">Where Companies Go .red[Wrong]
+
+</span>
+
+---
+class: top center     
+
+<span style="font-size: 100px; font-weight: 400;">What?!
+
+</span>
+
+<img src="gif/whats-going-on-here-croods.gif" width="90%" height="50%">
+
+---
+class:  
+
+.f-5[They are .red[‘Same-As’:]]
+
+<br>
+
+.pull-left[
+<span style="font-size: 60px;">.y.b[EACH COMPANY JUST LIKE THE REST]</span>
+
+<br>
+<br>
+.f1[Afraid to be different]
+
+]
+
+
+.pull-right[
+
+<img src="gif/printing-newspapers.gif" width=500, height = 400/>
+
+]
+
+---
+class:
+
+.f1.center[.red['Same-As'] companies don't stand a chance in the marketplace]
+
+.center[
+<img src="gif/clones1.gif" width=500, height = 400/>
+]
+
+---
+class: top  
+
+# .f-5[They .red[Copy, Copy, Copy]]
+
+.pull-left[
+
+<br>
+.f2[Everyone from business schools to self-help books continue to tell owners that .red[copying others] is the solution to their problems.]
+]
+
+.pull-right[
+
+<img src="gif/follow-the-crowd-mentality.gif", width=600, height = 400/>
+
+]
+
+---
+class:
+
+.f1.center[.red['Follow-the-Herd'] companies don't stand a chance in the marketplace either]
+
+.center[<img src="gif/clones2.gif" width=800, height=450/>]
+
+---
+background-image: url(gif/people-over-cliff-like-lemings.gif)
+background-size: cover
+
+.f-5.red.b.center[Woo Hoo!  Let's do what everyone else does!]
+
+---
+class: middle center  
+
+# .f1[
+On top of that, most 'Solutions' are .red[Incompatible] with their existing systems]
+
+<img src="gif/homer-pounds-puzzle-pieces.gif", width=500, height = 300/>
+
+---
+class:
+
+.f1[For example, companies naturally adopt the style of management known as .red[‘command-and-control’]]
+
+<img src="img/multiple-layers-of-management.jpg", width=1200, height=400>
+
+---
+class: top  
+
+.pull-left[
+
+.f-5.red[Unfortunately,]
+
+<br>
+<br>
+.f1[most improvement schemes (and many company goals) are .red.b[incompatible] with this style of management]  
+]
+
+.pull-right[
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="gif/should-fit-but-doesnt.gif", width=800, height=450>]
+
+---
+class: middle center
+
+.f1[So, most improvement efforts are .red.b[doomed] from the outset]
+
+<img src="gif/doesnt-fit-disaster.gif", width=800, height=450>]
+
+---
+class:
+
+.f1[So, what's a leader to do?]
+
+--
+
+<br>
+# * Be even more .tq[Effective,]
+
+--
+
+# * even more .o[Capable,] and
+
+--
+
+# * and become ever more .y[Unique]
+
+--
+
+# .right.b.lc[from your customer's point of view.]
+
+---
+class:
+
+.f1[These things hardly cost a thing...]
+
+--
+
+<br>
+# * But, they require a .y[different mindset]
+
+--
+
+# * A sense of .y[urgency,] and
+
+--
+
+# * The willingness to .y[try new things]
+
+---
+class: middle center
+
+<span style="font-size: 100px;">.b.tq[The reward is to become <br>.b.y[Unique in the marketplace]]</span>
+
+---
+class: middle center     
+
+<span style="font-size: 100px; font-weight: 400;">Which is the Point!
+
+</span>
+
+---
+class:  middle center
+
+.y[<span style="font-size: 100px; font-weight: 400;">WHAT TO DO NOW?</span>]
+
+---
+class:
+
+.f-5.tq[FIRST...]
+
+--
+
+# 1 - Adopt a .o[simple, straightforward] aim such as .b.y["Our Mission is to Create Happy Customers!"]
+
+--
+
+# Lose the .red[corporate-speak, gobbelty-gook jargon.]  It makes it .tq[MUCH HARDER] for everyone to do a great job.
+
+---
+class: top  
+
+.pull-left[.f-5[Next... .tq[Learn]]
+
+.f1[.o[first-hand] what customers value -- .y[from their point of view]]
+]
+
+.pull-right.bottom[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="img/talking-with-customers.jpg" width="100%" height="100%">]
+
+---
+class: top  
+
+.pull-left[.f-5.b[Next... .tq[Learn]]
+
+<br>
+.f2[.o[first-hand,] what customers experience .y[when dealing with your company]]
+
+<BR>
+.f2[(the good, bad, and ugly)]
+]
+
+
+.pull-right.bottom[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="img/frustrated-customer.jpg" width="100%" height="100%">]
+
+---
+class: bg-royalblue   
+
+# .white[Remember, management Is .o.b[Not Very Good] at Guessing What Customers Value]
+
+--
+
+<br>
+<br>
+
+.f-5.center[So, it .y[PAYS (a lot)] to Ask Them Directly]
+
+---
+class: top center bg-royalblue
+
+.f-5.b.gold[Case Study]
+
+<br>
+.f1[Initially, Dr. T and her team came up with 23 Ideas of creating value for her customers]
+
+---
+class: middle center bg-royalblue
+
+.f-5[Let's see how they did...]
+---
+class:
+background-image: url(img/blank-all-4-quadrants.png)
+background-size: contain
+
+---
+background-image: url(img/quadrants2and3.png)
+background-size: contain
+
+---
+background-image: url(img/quadrants1and4.png)
+background-size: contain
+
+---
+background-image: url(img/all-4-quadrants-with-dots.png)
+background-size: contain
+
+---
+class: top center bg-royalblue   
+
+.f-5.white[If there is any way at all]
+
+--
+
+<br>
+<br>
+
+.f-5.center[.b.y[Ask Customers Directly]]
+
+---
+class: top  
+
+.pull-left[.f-5[Then...]
+
+.f1[create .tq[Capability] so customers can pull what they value from you]
+
+.o.f1[when, where, and how they want to]
+]
+
+.pull-right.bottom[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="img/happy-customer.jpg" width=800, height=400>]
+
+---
+class: top center bg-royalblue
+
+.f-5.b.gold[Case Study]
+
+<br>
+.f1[Management at Stew Leonard's have mastered the .b.o[Capability] to .b.y['Listen, then Deliver']]
+
+<br>
+.f1.b[<a href="vid/stew-jr-power-of-customer-suggestions.mp4" target="_blank">Power of Customer Suggestions<br> 7 min</a>]
+
+---
+class: middle center fadeIn
+
+.f-6[.y.b[SOME PRINCIPLES] <br>
+for Action]
+
+---
+class: middle center    
+
+# Sound .y[PRINCIPLES] applied **daily** get
+
+<br>
+<br>
+<br>
+<br>
+
+.f-5.right.tq.b[AMAZING RESULTS]
+
+---
+class:  
+
+.y[<span style="font-size: 100px; font-weight: 400;">PRINCIPLE:</span>]
+
+<br>
+
+.f1.center.bottom[Focus on measures of  .tq[Effectiveness] 
+
+Not on measures of .red[Efficiency]
+]
+
+---
+class:  
+
+.y[<span style="font-size: 100px; font-weight: 400;">PRINCIPLE:</span>]
+
+<br>
+
+.f1.center.bottom[Focus on measures of  .tq[Effectiveness] 
+
+Not measures of .red[Productivity]
+]
+
+
+---
+class: top center  
+<br>
+<br>
+
+.f-6[ To be .b.y[UNIQUE]]<br>
+.f-6[Be .b.tq[EFFECTIVE!]]
+
+--
+
+<br>
+<br>
+
+# .b.y[(EVERY DAY)]
+
+---
+class: top center  
+<br>
+<br>
+
+.f-6[ To be .b.y[UNIQUE]]<br>
+.f-6[Be .b.o[CAPABLE!]]
+
+--
+
+<br>
+<br>
+
+# .b.y[(EVERY DAY)]
+
+---
+class: middle center     
+
+<span style="font-size: 100px; font-weight: 400;">Some Things To .red[AVOID]...
+
+</span>
+
+---
+class: top
+
+# BEWARE OF...
+
+--
+
+## Slogans, and so-called .tq[‘best practices’,] 
+
+--
+
+## .lightcoral[Agile,] .deepskyblue[Lean, or Six-Sigma,]
+
+--
+
+## Mission & Vision statements full of buzzwords,
+
+--
+
+## .o[Servant leadership] 
+
+<br>
+.right.f1[and other such  .red[management fads]]
+
+
+
+---
+class: middle center
+
+.f-5.red.center[Those only dig deeper the pit you are in]
+
+---
+class:  
+background-image: url(gif/thank-you-boy-hugs-chicken.gif)
+background-size: contain
+
+
+.f-5.b.o.right[THANK YOU!]
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.f1.left.bottom.b.y[Q & A]
+
+---
+
+<img src="gif/sesame-brought-to-you-by-letter.gif" width="100%" height="120%">
+
+<img src="img/multiple-layers-of-management.jpg", width=1200, height=400>
+
+.f1.b[<a href="vid/stew-jr-power-of-customer-suggestions.mp4" target="_blank">Power of Customer Suggestions<br> 7 min</a>]
+
+
+background-image: url(gif/thank-you-boy-hugs-chicken.gif)
+
+<!-- # MEDIA FILES IN PRESENTATION -->
+
+<!-- source("function-media-from-rmd.R") -->
+
+<!-- rmd_file <- "unique-is-more-important.Rmd" -->
+
+<!-- media_links <- media_from_rmd(rmd_file) -->
+
+<!-- print(media_links) -->
+
