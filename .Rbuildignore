@@ -12,3 +12,4 @@
 ^revdep$         # Reverse dependency checks
 ^\.Rhistory$     # R history
 ^\.RData$        # R data files
+
