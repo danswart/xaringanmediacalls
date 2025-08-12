@@ -1,3 +1,5 @@
+# Current as of: 2025-08-11
+
 
 # Bookdown files-if book rendered in cloud uncomment these
 /*.pdf
@@ -109,3 +111,17 @@ _freeze/
 !giscus.html
 
 
+
+
+# ------------------------
+# Large data files (naming convention: large_*)
+# These are typically big temporary or downloaded datasets that should not be versioned
+large_*.rds
+large_*.RDS
+large_*.csv
+large_*.xlsx
+
+
+
+.Rproj.user
+.quarto
